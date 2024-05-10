@@ -3,12 +3,14 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Models\Dish;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Dish>
  */
 class DishFactory extends Factory
 {
+    protected $model = Dish::class;
     /**
      * Define the model's default state.
      *
@@ -19,7 +21,7 @@ class DishFactory extends Factory
         return [
             'name' => fake()->name(50),
             'description' => fake()->text(200),
-            'price' => fake()->randomNumber(100000),
+            'price' => random_int(100, 100000),
             'img' => fake()->text(100),
         ];
     }

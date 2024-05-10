@@ -24,7 +24,13 @@ class Handler extends ExceptionHandler
     public function register(): void
     {
         $this->reportable(function (Throwable $e) {
-            //
+            // if ($e instanceof \Illuminate\Database\QueryException) {
+            //     dd($e->getMessage());
+            //     //return response()->view('custom_view');
+            // } elseif ($e instanceof \PDOException) {
+            //     dd($e->getMessage());
+            //     //return response()->view('custom_view');
+            // }
         });
     }
 }

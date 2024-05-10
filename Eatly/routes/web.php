@@ -23,15 +23,15 @@ Route::get('/user', function () {
 });
 
 Route::get('/dishes', function () {
-    return view('dishes');
+    return Controller::dishes();
 });
 
 Route::get('/news', function () {
-    return view('news');
+    return Controller::news();
 });
 
 Route::get('/reviews', function () {
-    return view('reviews');
+    return Controller::review();
 });
 
 Route::get('/login', function () {

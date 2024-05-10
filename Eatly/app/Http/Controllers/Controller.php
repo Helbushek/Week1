@@ -23,4 +23,25 @@ class Controller extends BaseController
 
         return view('user', ['users' => $users, 'title'=>"users"]);
     }
+
+    public static function news() {
+
+        $news = DB::table('news')->get();
+
+        return view('news', ['news' => $news, 'title'=>"news"]);
+    }
+
+    public static function review() {
+
+        $review = DB::table('reviews')->get();
+
+        return view('reviews', ['review' => $review, 'title'=>"review"]);
+    }
+
+    public static function dishes() {
+
+        $dishes = DB::table('dishes')->get();
+
+        return view('dishes', ['dishes' => $dishes, 'title'=>"dishes"]);
+    }
 }

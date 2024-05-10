@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Database\Factories\ReviewFactory;
+use App\Models\Review;
 
 class ReviewsSeeder extends Seeder
 {
@@ -13,6 +13,6 @@ class ReviewsSeeder extends Seeder
      */
     public function run(): void
     {
-        ReviewFactory::factory()->count(20)->create();
+        Review::factory()->count(20)->create();
     }
 }
