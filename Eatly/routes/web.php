@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\DataBaseController;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,7 +19,7 @@ Route::get('/', function () {
 });
 
 Route::get('/user', function () {
-    return view('user');
+    return Controller::user();
 });
 
 Route::get('/dishes', function () {
