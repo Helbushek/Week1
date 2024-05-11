@@ -1,18 +1,27 @@
 @include ('blocks.header', ['title'=>"Sign in"])
     <div class="d-flex align-items-center py-4 bg-body-tertiary">
 
+      
     
 <main class="form-signin w-25 m-auto">
-  <form  method="GET" action="/register/sign_in">
+  <form  method="GET" action="/auth/sign_in">
     <h1 class="h3 mb-3 fw-normal">Please sign up</h1>
 
-    
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+  @endif
     <div class="form-floating mb-3">
-      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+      <input type="email" class="form-control" id="floatingInput" name="email" placeholder="name@example.com">
       <label for="floatingInput">Email address</label>
     </div>
     <div class="form-floating mb-3">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+      <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Password">
       <label for="floatingPassword">Password</label>
     </div>
     

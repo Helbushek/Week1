@@ -7,6 +7,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 
+<?php use Illuminate\Support\Facades\Auth; ?>
+
 <body>
   <header class="p-3 text-bg-dark">
     <div class="container">
@@ -30,7 +32,10 @@
         <div class="text-end">
             <a href="/login"> <button type="button" class="btn btn-outline-light me-2">Login</button> </a>
             <a href="/register"> <button type="button" class="btn btn-warning">Sign-up</button> </a>
-        </div>
+            @if (Auth::check())
+            <a>Your name: <?php echo Auth::user()->name?></a>
+            @endif
+          </div>
       </div>
     </div>
   </header>

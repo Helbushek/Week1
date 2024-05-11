@@ -46,3 +46,11 @@ Route::get('/register', function () {
 Route::get('/auth/sign_up', 'App\Http\Controllers\AuthenticationController@sign_up');
 
 Route::get('/auth/sign_in', 'App\Http\Controllers\AuthenticationController@sign_in');
+
+Route::get('/auth/redact', function() {
+    return view('auth.redact');
+});
+
+Route::get('/auth/_redact', 'App\Http\Controllers\AuthenticationController@redact');
+
+Route::get('/auth/delete', 'App\Http\Controllers\AuthenticationController@delete');
