@@ -2,23 +2,31 @@
     <div class="d-flex align-items-center py-4 bg-body-tertiary">
     
 <main class="form-signin w-25 m-auto">
-  <form>
+  <form method="GET" action="/auth/sign_up">
     <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
-
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+  @endif
     <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="fullName" placeholder="Full name">
-        <label for="fullName">Full Name</label>
+        <input type="text" class="form-control" id="floatingInput" name="name" placeholder="Full name">
+        <label for="name">Full Name</label>
       </div>
     <div class="form-floating mb-3">
-      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+      <input type="email" class="form-control" id="floatingInput" name="email" placeholder="name@example.com">
       <label for="floatingInput">Email address</label>
     </div>
     <div class="form-floating mb-3">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+      <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Password">
       <label for="floatingPassword">Password</label>
     </div>
     <div class="form-floating mb-3">
-        <input type="password" class="form-control" id="floatingPasswordRepeat" placeholder="PasswordRepeat">
+        <input type="password" class="form-control" id="floatingPasswordRepeat" name="password_confirmation" placeholder="PasswordRepeat">
         <label for="floatingPasswordRepeat">Verify Your Password</label>
       </div>
 

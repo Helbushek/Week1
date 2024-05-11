@@ -21,27 +21,27 @@ class Controller extends BaseController
 
         $users = DB::table('users')->get();
 
-        return view('user', ['users' => $users, 'title'=>"users"]);
+        return view('user', ['users' => $users, 'title'=>"Users"]);
     }
 
     public static function news() {
 
         $news = DB::table('news')->get();
 
-        return view('news', ['news' => $news, 'title'=>"news"]);
+        return view('news', ['news' => $news, 'title'=>"News"]);
     }
 
     public static function review() {
 
         $review = DB::table('reviews')->get();
 
-        return view('reviews', ['review' => $review, 'title'=>"review"]);
+        return view('reviews', ['review' => $review, 'title'=>"Reviews"]);
     }
 
     public static function dishes() {
 
         $dishes = DB::table('dishes')->get();
 
-        return view('dishes', ['dishes' => $dishes, 'title'=>"dishes"]);
+        return view('dishes', ['dishes' => $dishes, 'title'=>"Dishes"]);
     }
 }

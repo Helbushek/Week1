@@ -1,12 +1,17 @@
-@include ('blocks.header', ['title' => "Dishes"]);
+@include ('blocks.header', ['title' => $title]);
 
-<div>
     @foreach($dishes as $key => $elem)
-            <h3>{{$elem->name}}</h3>
-            <p>{{$elem -> description}}</p>
-            <p>{{$elem -> price}}</p>
-            <p>{{$elem -> img}}</p>
+    <div class="col-md-6">
+        <div class="h-100 p-5 bg-body-tertiary border rounded-3">
+          <h2>{{$elem->name}}</h2>
+          <p>{{$elem->description}}</p>
+          <p>Price: {{$price}}</p>
+          <img src="{{$elem->img}}" alt="#">
+          <button class="btn btn-outline-secondary" type="button">Redact</button>
+          <button class="btn btn-outline-secondary" type="button">Delete</button>
+        </div>
+      </div>
     @endforeach
-</div>
+
 
 @include ('blocks.footer');

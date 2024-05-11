@@ -3,7 +3,7 @@
 
     
 <main class="form-signin w-25 m-auto">
-  <form>
+  <form  method="GET" action="/register/sign_in">
     <h1 class="h3 mb-3 fw-normal">Please sign up</h1>
 
     

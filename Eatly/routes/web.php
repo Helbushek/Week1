@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\AuthenticationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -41,3 +42,7 @@ Route::get('/login', function () {
 Route::get('/register', function () {
     return view('auth.register');
 });
+
+Route::get('/auth/sign_up', 'App\Http\Controllers\AuthenticationController@sign_up');
+
+Route::get('/auth/sign_in', 'App\Http\Controllers\AuthenticationController@sign_in');
