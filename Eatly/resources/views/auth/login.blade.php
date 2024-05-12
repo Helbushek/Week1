@@ -5,7 +5,7 @@
     
 <main class="form-signin w-25 m-auto">
   <form  method="GET" action="/auth/sign_in">
-    <h1 class="h3 mb-3 fw-normal">Please sign up</h1>
+    <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
     @if ($errors->any())
     <div class="alert alert-danger">
