@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\Controller;
-use App\Http\Controllers\AuthenticationController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// GENERAL ROUTES
 Route::get('/', function () {
     return view('welcome');
 });
@@ -35,6 +36,10 @@ Route::get('/reviews', function () {
     return Controller::review();
 });
 
+// AUTHENTICATION ROUTES
+
+use App\Http\Controllers\AuthenticationController;
+
 Route::get('/login', function () {
     return view('auth.login');
 });
@@ -54,3 +59,21 @@ Route::get('/auth/redact', function() {
 Route::get('/auth/_redact', 'App\Http\Controllers\AuthenticationController@redact');
 
 Route::get('/auth/delete', 'App\Http\Controllers\AuthenticationController@delete');
+
+// NEWS ROUTES
+
+use App\Http\Controllers\NewsController;
+
+Route::get('/news/add', function() {
+    return view('news.add');
+});
+
+Route::get('/news/_add', 'App\Http\Controllers\NewsController@add');
+
+Route::get('/news/redact', 'App\Http\Controllers\NewsController@redact');
+
+Route::get('/news/_redact', 'App\Http\Controllers\NewsController@_redact');
+
+Route::get('/news/delete', 'App\Http\Controllers\NewsController@delete');
+
+// DISH ROUTES
