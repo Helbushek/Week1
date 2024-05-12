@@ -1,12 +1,12 @@
-@include ('blocks.header', ['title' => $title]);
+@include ('blocks.header', ['title' => $title])
 
 <?php use Illuminate\Support\Facades\Auth; ?>
 @foreach($users as $key => $elem)
 <div class="col-md-6">
     <div class="h-100 p-5 bg-body-tertiary border rounded-3">
-      <h2>{{$elem->name}}</h2>
-      <p>{{$elem->email}}</p>
-      <p>{{$elem->password}}</p>
+      <h2>Name: {{$elem->name}}</h2>
+      <p>Email: {{$elem->email}}</p>
+      <p>Secreted absolutely totally safe to share hashed password!!!:{{$elem->password}}</p>
       @if(Auth::check() && (Auth::id()==$elem->id || Auth::user()->access_level == true))
       <div class="row sm">
         <div class="col-sm-2 col-8">
@@ -22,4 +22,4 @@
   </div>
 @endforeach
 
-@include ('blocks.footer');
+@include ('blocks.footer')

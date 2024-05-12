@@ -21,7 +21,6 @@
           <li><a href="/" class="nav-link px-2 text-secondary">Home</a></li>
           <li><a href="/user" class="nav-link px-2 text-white">Users</a></li>
           <li><a href="/dishes" class="nav-link px-2 text-white">Dishes</a></li>
-          <li><a href="/reviews" class="nav-link px-2 text-white">Reviews</a></li>
           <li><a href="/news" class="nav-link px-2 text-white">News</a></li>
         </ul>
 
@@ -34,6 +33,7 @@
             <a href="/register"> <button type="button" class="btn btn-warning">Sign-up</button> </a>
             @if (Auth::check())
             <a>Your name: <?php echo Auth::user()->name?> | You are: <?php echo Auth::user()->access_level == true ? "Admin" : "User" ; ?></a>
+            <a href="/logout"> <button type="button" class="btn btn-danger">Log out</button> </a>
             @endif
           </div>
       </div>

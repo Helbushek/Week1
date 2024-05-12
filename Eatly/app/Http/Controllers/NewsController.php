@@ -13,7 +13,7 @@ class NewsController extends Controller
     public static function add(Request $request): RedirectResponse {
         $confirmation = $request->validate([
             'title' => 'required|min:20|max:100',
-            'text' => 'max:1000',
+            'text' => 'max:10000',
         ]);
         $user_id = Auth::user()->id;
         DB::insert('insert into news (user_id, title, text, img) values (?,?,?,?)', [$user_id, $request->title, $request->text, $request->img]);
@@ -28,7 +28,7 @@ class NewsController extends Controller
     public static function _redact(Request $request) {
         $confirmation = $request->validate([
             'title' => 'required|min:20|max:100',
-            'text' => 'max:1000',
+            'text' => 'max:10000',
         ]);
 
         DB::table('news')->where('id', $request->id)->update([
